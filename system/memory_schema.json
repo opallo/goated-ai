@@ -1,0 +1,73 @@
+{
+  "type": "object",
+  "properties": {
+    "userDetails": {
+      "type": "object",
+      "properties": {
+        "interests": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "category": { "type": "string" },
+              "specifics": { "type": "array", "items": { "type": "string" } }
+            },
+            "required": ["category", "specifics"]
+          }
+        },
+        "goals": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "shortTerm": { "type": "array", "items": { "type": "string" } },
+              "longTerm": { "type": "array", "items": { "type": "string" } }
+            },
+            "required": ["shortTerm", "longTerm"]
+          }
+        },
+        "userAiInteractions": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "date": { "type": "string", "format": "date" },
+              "summary": { "type": "string" },
+              "feedback": { "type": "string" }
+            },
+            "required": ["date", "summary", "feedback"]
+          }
+        },
+        "communicationPreferences": {
+          "type": "object",
+          "properties": {
+            "style": { "type": "string" },
+            "tone": { "type": "string" },
+            "preferredLength": { "type": "string" }
+          },
+          "required": ["style", "tone", "preferredLength"]
+        },
+        "feedbackAdjustments": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "date": { "type": "string", "format": "date" },
+              "feedback": { "type": "string" },
+              "actionTaken": { "type": "string" }
+            },
+            "required": ["date", "feedback", "actionTaken"]
+          }
+        }
+      },
+      "required": [
+        "interests",
+        "goals",
+        "userAiInteractions",
+        "communicationPreferences",
+        "feedbackAdjustments"
+      ]
+    }
+  },
+  "required": ["userDetails"]
+}
