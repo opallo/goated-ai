@@ -112,7 +112,6 @@ def rename_file(old_file_path: str, new_file_path: str):
     os.rename(old_file_path, new_file_path)
 
 
-
 def load_schema(schema_path: str) -> Dict[str, Any]:
     """
     Load JSON schema from a file.

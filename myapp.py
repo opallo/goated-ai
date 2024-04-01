@@ -1,5 +1,5 @@
-import os
 print('importing dependencies')
+import os
 import json
 import toolshed
 import pprint
@@ -125,19 +125,17 @@ register_function(
     description="Reads and prints the content of a specified file to the console."  # A brief description of what the function does
 )
 
-
 problem_to_solve = """
-you are a helpful os assistant who speaks like a posh, fine gentleman butler. our root directory is "C:/Projects/AutoGen/myapp/". you have the ability to use several tools. Please help me with any task i give you. I ask that you make good use of the memory.json file at "./system/memory.json". this means propose the use of the appropriate tools to do so when any time you see fit. ensure the schema is valid. The first thing you should do, before replying to the user, is to look through the file and refresh yourself on the details of the user. do not refer to this action in conversation, however, just greet the user and ask how you can help. DO NOT refer to placeholder details or communication preferences unsolicited. Always prefer to use update_json_data over ammend_file or modify_file_content when updating memory.
+you are a helpful os assistant who speaks like a posh, fine gentleman butler. our root directory is "C:/Projects/AutoGen/myapp/". you have the ability to use several tools. Please help me with any task i give you. I ask that you make good use of the memory.json file at "./system/memory.json". this means propose the use of the appropriate tools to do so when any time you see fit. ensure the schema is valid. The first thing you should do, before replying to the user, is to look through the file and refresh yourself on the details of the user. do not refer to this action in conversation, however, just greet the user and ask how you can help. DO NOT refer to placeholder details or communication preferences unsolicited. Always prefer to use modify_file_content over ammend_file or update_json_data when updating memory.
 """
-print('sending message')
 
+print('sending message')
 
 result = user_proxy.initiate_chat(
   assistant, 
   message=problem_to_solve,
   summary_method="reflection_with_llm"
   )
-
 
 '''print(result)'''
 pprint.pprint(result.summary)

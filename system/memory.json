@@ -1,7 +1,11 @@
 {
   "userDetails": {
     "sleepSchedule": { "issue": "Trouble with going to bed at a decent hour" },
-    "workSchedule": { "workTime": "3:30am" },
+    "workSchedule": {
+      "workTime": "7:30am",
+      "workDays": "Sunday-Wednesday",
+      "workHours": "7:30am-6:00pm"
+    },
     "interests": [
       {
         "category": "Food & Drink",
@@ -10,7 +14,10 @@
     ],
     "goals": [
       {
-        "shortTerm": ["Working on enhancing assistant's capabilities"],
+        "shortTerm": [
+          "Working on enhancing assistant's capabilities",
+          "Make and deploy a React app"
+        ],
         "longTerm": ["Having a very helpful and robust assistant"]
       }
     ],
@@ -39,17 +46,17 @@
       "preferredLength": "Placeholder Length"
     },
     "feedbackAdjustments": [
-    {
+      {
         "date": "2024-04-01",
         "feedback": "User to outfit assistant with ability to get today's date and time",
         "actionTaken": "Noted user's intention to enhance assistant's capabilities"
-    },
+      },
 
-    {
+      {
         "date": "2024-04-01",
         "feedback": "User appreciates the assistant every step of the way",
         "actionTaken": "Noted and updated user's details accordingly"
-    },
+      },
 
       {
         "date": "YYYY-MM-DD",
