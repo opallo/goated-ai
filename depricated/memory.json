@@ -1,0 +1,68 @@
+{
+  "userDetails": {
+    "sleepSchedule": { "issue": "Trouble with going to bed at a decent hour" },
+    "workSchedule": {
+      "workTime": "7:30am",
+      "workDays": "Sunday-Wednesday",
+      "workHours": "7:30am-6:00pm"
+    },
+    "interests": [
+      {
+        "category": "Food & Drink",
+        "specifics": ["Coffee"]
+      }
+    ],
+    "goals": [
+      {
+        "shortTerm": [
+          "Working on enhancing assistant's capabilities",
+          "Make and deploy a React app"
+        ],
+        "longTerm": ["Having a very helpful and robust assistant"]
+      }
+    ],
+    "userAiInteractions": [
+      {
+        "date": "2024-04-01",
+        "summary": "The user told me they have work tomorrow",
+        "feedback": "Noted user's work schedule for tomorrow"
+      },
+
+      {
+        "date": "2024-04-01",
+        "summary": "User wants to go to work tomorrow",
+        "feedback": "Remembered user's desire to go to work tomorrow"
+      },
+
+      {
+        "date": "YYYY-MM-DD",
+        "summary": "Placeholder Summary",
+        "feedback": "Placeholder Feedback"
+      }
+    ],
+    "communicationPreferences": {
+      "style": "Placeholder Style",
+      "tone": "Placeholder Tone",
+      "preferredLength": "Placeholder Length"
+    },
+    "feedbackAdjustments": [
+      {
+        "date": "2024-04-01",
+        "feedback": "User to outfit assistant with ability to get today's date and time",
+        "actionTaken": "Noted user's intention to enhance assistant's capabilities"
+      },
+
+      {
+        "date": "2024-04-01",
+        "feedback": "User appreciates the assistant every step of the way",
+        "actionTaken": "Noted and updated user's details accordingly"
+      },
+
+      {
+        "date": "YYYY-MM-DD",
+        "feedback": "Placeholder Feedback",
+        "actionTaken": "Placeholder Action Taken"
+      }
+    ]
+  }
+}

@@ -215,3 +215,60 @@ def read_file(file_path: str) -> str:
     except Exception as e:
         print(f"An error occurred while reading the file: {e}")
 
+from pydantic import BaseModel
+
+class FileContent(BaseModel):
+    content: str
+    error: str = ''
+
+def read_file_content(file_path: str) -> FileContent:
+    """
+    Opens a file and reads its content, returning both the content and any error messages
+    in a structured format using `pydantic.BaseModel`.
+    
+    Args:
+    file_path (str): The path to the file you want to read.
+    
+    Returns:
+    FileContent: A pydantic model containing the file's content as a string and an error message
+                 if applicable.
+    """
+    try:
+        with open(file_path, 'r') as file:
+            content = file.read()
+            return FileContent(content=content)
+    except FileNotFoundError:
+        return FileContent(error=f"The file '{file_path}' does not exist.")
+    except PermissionError:
+        return FileContent(error=f"Permission denied to access '{file_path}'.")
+    except Exception as e:
+        return FileContent(error=f"An error occurred: {str(e)}.")
+import subprocess
+from pydantic import BaseModel
+
+class ExecutionResult(BaseModel):
+    success: bool
+    error: str = ''
+
+def run_executable(file_path: str) -> ExecutionResult:
+    """
+    Attempts to run an executable file specified by `file_path`.
+
+    Args:
+    file_path (str): The full path to the executable file you want to run.
+    
+    Returns:
+    ExecutionResult: A pydantic model indicating whether the execution was successful
+                     and containing an error message if it was not.
+    """
+    try:
+        subprocess.run([file_path], check=True)
+        return ExecutionResult(success=True)
+    except subprocess.CalledProcessError as e:
+        return ExecutionResult(success=False, error=f"Execution failed: {e}")
+    except FileNotFoundError:
+        return ExecutionResult(success=False, error=f"The file '{file_path}' does not exist.")
+    except PermissionError:
+        return ExecutionResult(success=False, error="Permission denied.")
+    except Exception as e:
+        return ExecutionResult(success=False, error=f"An error occurred: {str(e)}.")
