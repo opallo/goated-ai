@@ -3,6 +3,8 @@ from typing import Annotated, Literal, Optional, Dict, Any
 import json
 import orjson
 from jsonschema import validate, ValidationError
+import subprocess
+from pydantic import BaseModel
 
 # Define the type for the operator to restrict to specific arithmetic operations
 Operator = Literal["+", "-", "*", "/"]
@@ -99,7 +101,6 @@ def list_directory_contents(directory_path: str) -> str:
         print(f"The directory '{directory_path}' does not exist.")
     except PermissionError:
         print(f"Permission denied to access '{directory_path}'.")
-
 # Function to rename a file
 def rename_file(old_file_path: str, new_file_path: str):
     '''
@@ -110,7 +111,6 @@ def rename_file(old_file_path: str, new_file_path: str):
         new_file_path (str): The new path for the file.
     '''
     os.rename(old_file_path, new_file_path)
-
 
 def load_schema(schema_path: str) -> Dict[str, Any]:
     """
@@ -215,8 +215,6 @@ def read_file(file_path: str) -> str:
     except Exception as e:
         print(f"An error occurred while reading the file: {e}")
 
-from pydantic import BaseModel
-
 class FileContent(BaseModel):
     content: str
     error: str = ''
@@ -243,8 +241,6 @@ def read_file_content(file_path: str) -> FileContent:
         return FileContent(error=f"Permission denied to access '{file_path}'.")
     except Exception as e:
         return FileContent(error=f"An error occurred: {str(e)}.")
-import subprocess
-from pydantic import BaseModel
 
 class ExecutionResult(BaseModel):
     success: bool

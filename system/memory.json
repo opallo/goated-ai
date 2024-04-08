@@ -2,7 +2,7 @@
   "userDetails": {
     "interests": [],
     "goals": [],
-    "userAiInteractions": [],
+    "userAiInteractions": ["User had interactions on the secondary computer to create a file named 'good_day.txt' in the directory 'C:/Projects/goated-ai/'."],
     "communicationPreferences": {
       "style": "",
       "tone": "",
