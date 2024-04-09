@@ -1,11 +1,24 @@
 print('importing dependencies')
 import os
 import json
-import toolshed
 import pprint
 import importlib
 import prompts
 from autogen import ConversableAgent, AssistantAgent, UserProxyAgent, register_function
+
+print('configuring models')
+
+with open('./config/config_list.json', 'r') as f:
+  config_list = json.load(f)
+  
+gpt35t = config_list["config_list"][0]
+gpt4 = config_list["config_list"][1]
+
+with open('./agent_library.json', 'r') as f:
+  agent_list = json.load(f)
+  
+software_dev_profile = agent_list[2]["profile"]
+physicist_profile = agent_list[10]["profile"]
 
 def load_and_register_functions(json_path):
   with open(json_path, 'r') as file:
@@ -27,20 +40,6 @@ def load_and_register_functions(json_path):
         name=function_name,
         description=description,
     )
-
-print('configuring models')
-
-with open('./config_list.json', 'r') as f:
-  config_list = json.load(f)
-  
-gpt35t = config_list["config_list"][0]
-gpt4 = config_list["config_list"][1]
-
-with open('./agent_library.json', 'r') as f:
-  agent_list = json.load(f)
-  
-software_dev_profile = agent_list[2]["profile"]
-physicist_profile = agent_list[10]["profile"]
 
 print('creating agents')
 
@@ -64,13 +63,13 @@ user_proxy = UserProxyAgent(
     }
 )
 
-load_and_register_functions("./function_registrations.json")
+load_and_register_functions("./config/function_registrations.json")
 
-print('sending message')
+print('initiating chat')
 
 result = user_proxy.initiate_chat(
   assistant, 
-  message=prompt_better,
+  message=prompts.prompt_better,
   summary_method="reflection_with_llm"
   )
 
