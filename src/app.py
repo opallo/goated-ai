@@ -1,5 +1,4 @@
 print('importing dependencies')
-import os
 import pprint
 import loader
 import prompts.prompts as prompts
