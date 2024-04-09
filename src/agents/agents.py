@@ -1,13 +1,13 @@
-from autogen import AssistantAgent, UserProxyAgent
+from autogen import AssistantAgent, UserProxyAgent, config_list_from_json
 import prompts.prompts as prompts
-import json
-#from config import config_list as cl
+from dotenv import load_dotenv
 
-with open('./config/config_list.json', 'r') as f:
-  cl = json.load(f)
+load_dotenv()
 
-gpt35t = cl["config_list"][0]
-gpt4 = cl["config_list"][1]
+config_list = config_list_from_json(env_or_file="OAI_CONFIG_LIST")
+
+gpt35t = config_list["config_list"][0]
+gpt4 = config_list["config_list"][1]
 
 assistant = AssistantAgent(
   name="assistant",
@@ -26,3 +26,8 @@ user_proxy = UserProxyAgent(
         "use_docker": False
     }
 )
+
+
+
+# with open('./config/config_list.json', 'r') as f:
+#   cl = json.load(f)

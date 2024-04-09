@@ -1,4 +1,4 @@
-{
+function_registrations = {
   "registrations": [
   {
     "module": "toolshed.file_operations",

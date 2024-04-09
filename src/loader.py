@@ -1,10 +1,10 @@
 import importlib
 from autogen import register_function
-from config import config_list as config
+from toolshed import function_registrations as fr
 
 def load_and_register_functions(agent, user_proxy):
   
-  for reg in config.CONFIG_LIST['registrations']:
+  for reg in fr.function_registrations['registrations']:
     module_name = reg['module']
     function_name = reg['name']
     description = reg['description']
