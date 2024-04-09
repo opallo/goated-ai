@@ -18,7 +18,7 @@ print('initiating chat')
 
 result = agents.user_proxy.initiate_chat(
   agents.assistant, 
-  message=prompts.prompt_better,
+  message="Hello!",
   summary_method="reflection_with_llm"
   )
 

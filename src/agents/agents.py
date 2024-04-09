@@ -11,7 +11,7 @@ gpt4 = config_list["config_list"][1]
 
 assistant = AssistantAgent(
   name="assistant",
-  system_message=str(prompts.prompt_better),
+  system_message=str(prompts.butler_prompt),
   llm_config=gpt35t,
   code_execution_config=False,
   function_map=None,
@@ -26,8 +26,3 @@ user_proxy = UserProxyAgent(
         "use_docker": False
     }
 )
-
-
-
-# with open('./config/config_list.json', 'r') as f:
-#   cl = json.load(f)
