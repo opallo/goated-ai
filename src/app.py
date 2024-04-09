@@ -12,7 +12,7 @@ print('creating agents')
 print("Using: " + str(agents.assistant.llm_config["model"]))
 
 # call this multiple times to register different functions to different assistants 
-loader.load_and_register_functions("./config/function_registrations.json", agents.assistant, agents.user_proxy)
+loader.load_and_register_functions(agents.assistant, agents.user_proxy)
 
 print('initiating chat')
 

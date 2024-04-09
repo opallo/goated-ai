@@ -1,15 +1,10 @@
 import importlib
-import json
 from autogen import register_function
-from dotenv import load_dotenv
+from config import config_list as config
 
-def load_and_register_functions(json_path, agent, user_proxy):
-  with open(json_path, 'r') as file:
-    config = json.load(file)
-    config['config_list'][0]['api_key'] = load_dotenv('OPENAI_API_KEY')
-    print(str(config))
-    
-  for reg in config['registrations']:
+def load_and_register_functions(agent, user_proxy):
+  
+  for reg in config.CONFIG_LIST['registrations']:
     module_name = reg['module']
     function_name = reg['name']
     description = reg['description']
