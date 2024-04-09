@@ -79,7 +79,7 @@ def create_file(file_path: str) -> int:
   #     print("Failed to create the file.")
 
 
-def open_mspaint():
+def open_mspaint() -> str:
     """
     Opens Microsoft Paint on a Windows system.
     

@@ -4,10 +4,14 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
+print('Configuring models...\n')
+
 config_list = config_list_from_json(env_or_file="OAI_CONFIG_LIST")
 
 gpt35t = config_list["config_list"][0]
 gpt4 = config_list["config_list"][1]
+
+print('Creating agents...\n')
 
 assistant = AssistantAgent(
   name="assistant",
@@ -26,3 +30,5 @@ user_proxy = UserProxyAgent(
         "use_docker": False
     }
 )
+
+print("Using: " + str(assistant.llm_config["model"]) + "\n")
