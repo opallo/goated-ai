@@ -1,19 +1,12 @@
 print('importing dependencies')
 import os
-import json
 import pprint
 import loader
-import prompts
-import agents
+import prompts.prompts as prompts
+import agents.agents as agents
 
 print('configuring models')
-
-with open('./config/config_list.json', 'r') as f:
-  config_list = json.load(f)
   
-gpt35t = config_list["config_list"][0]
-gpt4 = config_list["config_list"][1]
-
 print('creating agents')
 
 print("Using: " + str(agents.assistant.llm_config["model"]))

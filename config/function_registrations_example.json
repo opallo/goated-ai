@@ -1,0 +1,95 @@
+{
+  "registrations": [
+    {
+      "module": "toolshed",
+      "name": "calculator",
+      "caller": "assistant",
+      "executor": "user_proxy",
+      "description": "A simple calculator"
+    },
+    {
+      "module": "toolshed",
+      "name": "create_file",
+      "caller": "assistant",
+      "executor": "user_proxy",
+      "description": "A simple file creation tool"
+    },
+    {
+      "module": "toolshed",
+      "name": "append_to_file",
+      "caller": "assistant",
+      "executor": "user_proxy",
+      "description": "Appends specified text to a file, creating the file if it does not exist."
+    },
+    {
+      "module": "toolshed",
+      "name": "list_directory_contents",
+      "caller": "assistant",
+      "executor": "user_proxy",
+      "description": "Lists the contents of a specified directory, including both files and directories."
+    },
+    {
+      "module": "toolshed",
+      "name": "rename_file",
+      "caller": "assistant",
+      "executor": "user_proxy",
+      "description": "Renames a file, given the file exists."
+    },
+    {
+      "module": "toolshed",
+      "name": "load_schema",
+      "caller": "assistant",
+      "executor": "user_proxy",
+      "description": "Loads a JSON schema from a specified file, returning it as a dictionary for further use."
+    },
+    {
+      "module": "toolshed",
+      "name": "load_json_data",
+      "caller": "assistant",
+      "executor": "user_proxy",
+      "description": "Loads JSON data from a specified file, returning it as a dictionary for processing."
+    },
+    {
+      "module": "toolshed",
+      "name": "validate_json_data",
+      "caller": "assistant",
+      "executor": "user_proxy",
+      "description": "Validates a given JSON data against a specified schema, ensuring it meets all the required structural and data type specifications."
+    },
+    {
+      "module": "toolshed",
+      "name": "update_json_data",
+      "caller": "assistant",
+      "executor": "user_proxy",
+      "description": "Updates and saves JSON data based on provided updates, validating against a schema to ensure data integrity."
+    },
+    {
+      "module": "toolshed",
+      "name": "modify_file_content",
+      "caller": "assistant",
+      "executor": "user_proxy",
+      "description": "Replaces specified content in a file with new content, effectively 'backspacing' and replacing parts of the file's content."
+    },
+    {
+      "module": "toolshed",
+      "name": "read_file",
+      "caller": "assistant",
+      "executor": "user_proxy",
+      "description": "Reads and prints the content of a specified file to the console."
+    },
+    {
+      "module": "toolshed",
+      "name": "read_file_content",
+      "caller": "assistant",
+      "executor": "user_proxy",
+      "description": "Reads the content of a specified file and returns the content along with any error messages in a structured format."
+    },
+    {
+      "module": "toolshed",
+      "name": "run_executable",
+      "caller": "assistant",
+      "executor": "user_proxy",
+      "description": "Runs an executable file specified by the file path, providing success status and error messages."
+    }
+  ]
+}
