@@ -2,6 +2,11 @@ function_registrations = {
     "registrations": [
         {
             "module": "toolshed.file_operations",
+            "name": "open_mspaint",
+            "description": "A tool that opens mspaint"
+        },
+        {
+            "module": "toolshed.file_operations",
             "name": "list_directory_contents",
             "description": "A tool for listing the contents of a given directory"
         },

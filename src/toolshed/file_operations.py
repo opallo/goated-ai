@@ -1,4 +1,5 @@
 import os
+import subprocess
 
 def list_directory_contents(directory_path: str) -> (str):
 
@@ -77,3 +78,23 @@ def create_file(file_path: str) -> int:
   # else:
   #     print("Failed to create the file.")
 
+
+def open_mspaint():
+    """
+    Opens Microsoft Paint on a Windows system.
+    
+    Returns:
+    tuple[str, int]: A tuple containing a message indicating the result of the operation
+                     and a code (0 for success, -1 for failure).
+    """
+    try:
+        subprocess.Popen("mspaint")
+        return ("Microsoft Paint has been opened successfully.", 0)
+    except Exception as e:
+        return (f"Failed to open Microsoft Paint: {str(e)}", -1)
+
+  # Example usage
+  # message, code = open_mspaint()
+  # print(message)
+  # if code != 0:
+  #     print(f"Error code: {code}")
