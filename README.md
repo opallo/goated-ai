@@ -1,4 +1,4 @@
-# AIOS
+# AIOS (Project: goated-ai)
 
 ## Citations:
 
