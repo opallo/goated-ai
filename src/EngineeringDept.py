@@ -4,6 +4,7 @@ import loader
 import prompts.prompts as prompts
 import agents.agents as agents
 import autogen
+import transitions.transitions as transitions
 
 # call this multiple times to register different functions to different assistants 
 # loader.load_and_register_functions(agents.agent_1, agents.agent_2)
@@ -25,7 +26,7 @@ groupchat = autogen.GroupChat(
   agents=[agents.initializer, agents.coder, agents.executor, agents.reviewer],
   messages=[],
   max_round=30,
-  speaker_selection_method=toolgen_state_transition,
+  speaker_selection_method=transitions.toolgen_state_transition,
   allow_repeat_speaker=False,
   send_introductions=True,
   enable_clear_history=True,

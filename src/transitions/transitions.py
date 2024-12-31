@@ -1,4 +1,4 @@
-import agents
+import agents.agents as agents
 
 # ============ TOOL GEN ==============
 
