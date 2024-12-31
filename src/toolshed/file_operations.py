@@ -98,3 +98,72 @@ def open_mspaint() -> str:
   # print(message)
   # if code != 0:
   #     print(f"Error code: {code}")
+
+def save_file(file_name: str, content: str) -> None:
+
+    # Saves a file with the given content to the working directory.
+
+    # Parameters:
+    #    file_name (str): The name of the file to be saved.
+    #    content (str): The content to be written into the file.
+
+    # Example Usage:
+    # save_file("example.txt", "This is an example text content.")
+
+    with open(file_name, 'w') as file:
+        file.write(content)
+
+def read_file(file_path: str) -> str:
+    
+    # Reads the contents of a file.
+
+    # Parameters:
+    #    file_path (str): The path to the file to be read.
+
+    # Returns:
+    #    str: The contents of the file as a string.
+
+    try:
+        with open(file_path, 'r') as file:
+            content = file.read()
+            print("File read successfully.")
+            return content
+    except Exception as e:
+        print(f"Error reading file: {e}")
+        return ""
+
+    # Example Usage:
+    # file_content = read_file("example.txt")
+
+def write_function_registrations(registrations: dict) -> None:
+    
+    # Writes function registrations to a file.
+
+    # Parameters:
+    #    registrations (dict): A dictionary containing function registrations.
+
+    # Returns:
+    #    None
+
+    # Example Usage:
+    # write_function_registrations(function_registrations)
+    # ---
+
+    with open("function_registrations.py", "w") as file:
+        file.write("function_registrations = {\n")
+        file.write("    \"registrations\": [\n")
+        
+        for registration in registrations["registrations"]:
+            file.write("        {\n")
+            file.write(f"            \"module\": \"{registration['module']}\",\n")
+            file.write(f"            \"name\": \"{registration['name']}\",\n")
+            file.write(f"            \"description\": \"{registration['description']}\"\n")
+            file.write("        },\n")
+        
+        file.write("    ]\n")
+        file.write("}\n")
+
+    print("Function registrations have been written to function_registrations_output.py file.")
+
+    # Example Usage
+    # write_function_registrations(function_registrations)

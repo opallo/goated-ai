@@ -12,8 +12,18 @@ function_registrations = {
         },
         {
             "module": "toolshed.file_operations",
-            "name": "create_file",
-            "description": "A simple file creation tool"
+            "name": "save_file",
+            "description": "A tool for saving a file such as .py, .txt, or .md, etc."
+        },
+        {
+            "module": "toolshed.file_operations",
+            "name": "read_file",
+            "description": "A tool for reading files"
+        },
+        {
+            "module": "toolshed.file_operations",
+            "name": "write_function_registrations",
+            "description": "A tool for writing function registrations"
         }
     ]
 }
