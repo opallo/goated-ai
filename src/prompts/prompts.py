@@ -46,7 +46,7 @@ def add_numbers(a: int, b: int) -> int:
     # add_numbers(1, 2)
     # ---
 
-    <CODE>
+    CODE HERE
 
 The code should always annotate the return type as well as have debug messages like "task success", or "xyz error". 
 """

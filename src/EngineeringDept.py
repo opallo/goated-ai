@@ -14,6 +14,7 @@ import transitions.transitions as transitions
 print('Initiating OS...\n')
 
 loader.load_and_register_functions(agents.reviewer, agents.executor) 
+# loader.load_and_register_functions(agents.coder, agents.executor) 
 
 print("\n===================================")
 print("=                                 =")
@@ -24,7 +25,7 @@ print("===================================\n")
 
 groupchat = autogen.GroupChat(
   agents=[agents.initializer, agents.coder, agents.executor, agents.reviewer],
-  messages=[],
+  messages=[f"""ALWAYS SAVE FINISHED PRODUCT HERE: {prompts.working_directory}"""],
   max_round=30,
   speaker_selection_method=transitions.toolgen_state_transition,
   allow_repeat_speaker=False,
@@ -36,12 +37,12 @@ manager = autogen.GroupChatManager(
   groupchat=groupchat,
   system_message=prompts.group_chat_manager_prompt,
   human_input_mode="NEVER",
-  description="A bot that manages conversations and replies in the group chat.",
+  description="A bot that manages conversations and replies in the group chat. ",
   
 )
 
 result = agents.initializer.initiate_chat(
-    manager, message="""1. BEFORE WE GET STARTED: Tell a short story, then we can move on to 2. 2. Topic: Hanging out. Requirement: Relax, it's the weekend!"""
+    manager, message=f"""Topic: AI Blockchain Research. Requirement: a tool that pulls 5 research papers from arxiv api on a given topic."""
 )
 
 # result = agents.agent_1.initiate_chat(

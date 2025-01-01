@@ -9,8 +9,8 @@ print('Configuring models...\n')
 config_list = config_list_from_json(env_or_file="OAI_CONFIG_LIST")
 
 gpt35t = config_list["config_list"][0]
-gpt4 = config_list["config_list"][1]
-gpt4o = config_list["config_list"][2]
+# gpt4 = config_list["config_list"][1]
+# gpt4o = config_list["config_list"][2]
 
 print('Creating agents...\n')
 
@@ -55,6 +55,7 @@ coder = AssistantAgent(
   llm_config=gpt35t,
   system_message=str(prompts.tool_coder_prompt)
 )
+
 
 # =============== RESEARCHERS ===================
 

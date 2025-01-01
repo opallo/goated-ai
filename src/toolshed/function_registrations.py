@@ -13,7 +13,7 @@ function_registrations = {
         {
             "module": "toolshed.file_operations",
             "name": "save_file",
-            "description": "A tool for saving a file such as .py, .txt, or .md, etc."
+            "description": "A tool for saving a file such as .py, .txt, or .md, etc. Should be called when saving to working directory"
         },
         {
             "module": "toolshed.file_operations",
